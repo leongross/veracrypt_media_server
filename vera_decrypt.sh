@@ -1,5 +1,6 @@
 #!/bin/sh
 # run script with uid = 1
+# TODO: fstab?
 
 # device uuids
 vera_key_PARTUUID="00873066-01"

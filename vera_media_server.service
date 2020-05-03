@@ -1,0 +1,12 @@
+[Unit]
+Description=Automaticly decrypt vercrypt volumes and start samba service.
+
+[Service]
+Type=execi
+RamainAfterExit=yes
+ExecStart= /mount.sh/
+ExecStop= /dismount.sh/
+TimeoutSec=10
+
+[Install]
+WantedBy=multi-user.target 
