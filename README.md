@@ -12,9 +12,15 @@ chmod +x ./install.sh && ./install.sh
 ```
 
 ### Usage
+Mount and decrypt volumes
 ```bash
-sudo ./vera_decrypt.sh
+sudo ./vera_mount.sh
 ```
+Unmount and encrypt volumes
+```bash
+sudo ./vera_umount
+```
+
 On correct execution the output should look similliar to this:
 ``` bash
 [*] vera_key_dev = 00873066-01
@@ -27,9 +33,21 @@ On correct execution the output should look similliar to this:
 [+] Successfully decrypted and mounted volume
 [+] Samba service running
 ```
-If you really intent to use my project make sure to change the following entries in `vera_decrypt.sh`
+If you intent to use my project make sure to change the following entries in `vera_mount.sh`
 ```bash
 # device uuids
 vera_key_PARTUUID="your_key_partition_id"
 vera_media_PARTUUID="your_encrypted_partition_id"
+```
+
+The `systemd` module `vera_media_server.service` is currently not working properly, do not rely on it.
+
+The script `stats.sh` shows *general* statictics about the sever, it is unrelated to veracrypt
+```bash
+[*] Active SSH connections: 2
+[*] Mounted Vera Volumes: /dev/sdb2 -> /mnt/vera_media
+[+] Apache2 Service Up
+[*] Docker containers active: 0
+[+] Samba Server Up
+[*] IP's connected via samba:    192.168.178.20
 ```
