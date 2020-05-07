@@ -51,3 +51,8 @@ The script `stats.sh` shows *general* statictics about the sever, it is unrelate
 [+] Samba Server Up
 [*] IP's connected via samba:    192.168.178.20
 ```
+Using `stats_n.sh` instead of `stats.sh` gives you the ability so host a minimal website containing `stats.sh` output updated every 2 seconds.
+
+```bash
+./stats_n.sh 8888
+```
