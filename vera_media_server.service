@@ -4,8 +4,8 @@ Description=Automaticly decrypt vercrypt volumes and start samba service.
 [Service]
 Type=execi
 RamainAfterExit=yes
-ExecStart= /mount.sh/
-ExecStop= /dismount.sh/
+ExecStart=/home/pi/veracrypt_media_server/vera_mount.sh
+ExecStop=/home/pi/veracrypt_media_server/vera_unmount.sh
 TimeoutSec=10
 
 [Install]
